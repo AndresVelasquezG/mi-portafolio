@@ -1,0 +1,33 @@
+/* Estilos adicionales para el navbar */
+.navbar-brand img {
+  height: 45px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.theme-toggle {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.redes a {
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}

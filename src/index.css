@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de colores globales para consistencia */
+:root {
+  --primary-blue: #667eea;
+  --primary-purple: #764ba2;
+  --secondary-blue: #4facfe;
+  --secondary-purple: #00f2fe;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  --darker-gray: #495057;
+  --black: #212529;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --shadow-light: rgba(102, 126, 234, 0.1);
+  --shadow-medium: rgba(102, 126, 234, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+  --card-border: linear-gradient(135deg, #667eea, #764ba2);
+  --icon-bg: linear-gradient(135deg, #667eea, #764ba2);
+  --bg-gradient: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --primary-blue: #4a5fd5;
+  --primary-purple: #5a3a8a;
+  --secondary-blue: #2e8bc0;
+  --secondary-purple: #00d4ff;
+  --white: #0a0a0a;
+  --light-gray: #1a1a1a;
+  --medium-gray: #2a2a2a;
+  --dark-gray: #b0b0b0;
+  --darker-gray: #1a1a1a;
+  --black: #e8e8e8;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --card-bg: rgba(20, 20, 20, 0.95);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --card-border: linear-gradient(135deg, #4a5fd5, #5a3a8a);
+  --icon-bg: linear-gradient(135deg, #4a5fd5, #5a3a8a);
+  --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--black);
+    transition: background 0.3s ease, color 0.3s ease;
+    padding-top: 56px; /* Altura del navbar */
+}
+
+/* Estilos adicionales para modernidad */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Clases personalizadas para dark mode */
+.bg-light-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    transition: background 0.3s ease;
+}
+
+.dark-mode .bg-light-custom {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+.bg-white-custom {
+    background: var(--white) !important;
+    transition: background 0.3s ease;
+}
+
+.bg-dark-custom {
+    background: var(--darker-gray) !important;
+    color: var(--black) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}

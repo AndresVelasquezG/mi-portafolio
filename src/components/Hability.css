@@ -1,0 +1,83 @@
+.cardd {
+    background: var(--card-bg);
+    border: 1px solid var(--medium-gray);
+    border-radius: 12px;
+    padding: 300px;
+    margin: 20px auto;
+    box-shadow: var(--card-shadow);
+    max-width: 1000px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--black);
+}
+
+.cardd:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-medium), 0 4px 8px var(--shadow-light);
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skill-input label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-right: 10px;
+}
+
+.skill-input input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.skill-input span {
+    margin-left: 5px;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.skill:first-child h1 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+/* Dark mode text colors */
+body.dark-mode #habilidades label {
+    color: #ffffff !important;
+}
+
+body.dark-mode #habilidades span {
+    color: #ffffff !important;
+}
+
+body.dark-mode #habilidades h2 {
+    color: #ffffff !important;
+}
+
+.progress-bar {
+    background-color: var(--medium-gray);
+    border-radius: 8px;
+    height: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px var(--shadow-light);
+}
+
+.progress {
+    background: var(--card-border);
+    height: 100%;
+    transition: width 0.4s ease;
+    border-radius: 8px;
+}
