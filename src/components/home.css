@@ -1,151 +1,113 @@
-/* Estilos modernos y profesionales para el componente Home */
-
-/* Variables CSS para consistencia y facilidad de mantenimiento */
-:root {
-  --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --overlay-color: rgba(0, 0, 0, 0.4);
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --text-muted: #b0b0b0;
-  --accent-color: #ffffff;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --border-radius: 15px;
-  --transition: all 0.3s ease;
-}
+﻿/* Estilos modernos y profesionales para el componente Home */
 
 .home-container {
-  height: 100vh;
+  min-height: calc(100vh - 72px);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 48px);
   text-align: center;
-  padding: clamp(20px, 5vw, 40px);
-  background: var(--primary-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--text-primary);
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  color: #fff;
   overflow: hidden;
-  
-}
-
-.dark-mode .home-container {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  background-attachment: fixed;
 }
 
 .home-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--overlay-color);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 55, 85, 0.72), rgba(6, 45, 70, 0.42));
   z-index: 1;
 }
 
 .home-container > * {
   position: relative;
   z-index: 2;
-  animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .welcome {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  margin-bottom: clamp(30px, 8vh, 70px);
-  color: var(--text-secondary);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  margin-bottom: clamp(30px, 7vh, 60px);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
-  opacity: 0.8;
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: clamp(30px, 6vh, 50px);
-  color: var(--text-primary);
-  text-shadow: var(--shadow);
-  line-height: 1.2;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin-bottom: clamp(24px, 6vh, 48px);
+  line-height: 1.05;
+  text-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
 }
 
 .ability {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
   font-weight: 500;
-  margin-bottom: 20px;
-  color: var(--accent-color);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+  color: rgba(223, 234, 255, 0.92);
 }
 
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 28px 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+}
 
+.hero-card {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+}
 
 .skillss {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  line-height: 1.7;
-  font-weight: 400;
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(10px);
-  padding: clamp(20px, 4vw, 30px);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: var(--transition);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
 }
 
-.skillss:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.home-container .btn-primary {
+  padding: 1rem 2.2rem;
+  font-size: 1rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Media queries mejoradas para responsividad */
 @media (max-width: 768px) {
   .home-container {
     padding: 20px;
   }
 
-  .welcome {
-    margin-bottom: 40px;
-  }
-
   .title {
-    margin-bottom: 30px;
+    font-size: 2.8rem;
   }
 
-  .ability {
-    margin-bottom: 15px;
-  }
-
-  .skills {
-    padding: 20px;
+  .skills-container {
+    padding: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .ability {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
-  .skills {
-    font-size: 1rem;
-    padding: 15px;
+  .skills-container {
+    padding: 18px;
   }
 }

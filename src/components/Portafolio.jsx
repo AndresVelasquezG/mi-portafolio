@@ -1,5 +1,5 @@
 import './portafolio.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Carousel, Card, Container, Row, Col } from 'react-bootstrap';
 
 // Mapeo de colores para lenguajes
@@ -30,10 +30,17 @@ function Portafolio({ isDarkMode }) {
         return LENGUAJES_CONFIG[lenguaje] || { color: '#666', bg: '#F5F5F5' };
     };
 
+    const projectChunks = useMemo(() => {
+        return Array.from({ length: Math.ceil(proyectos.length / 3) }, (_, idx) => proyectos.slice(idx * 3, idx * 3 + 3));
+    }, [proyectos]);
+
     useEffect(() => {
+        const controller = new AbortController();
         const obtenerProyectos = async () => {
             try {
-                const respuesta = await fetch(`https://api.github.com/users/${USUARIO_GITHUB}/repos?sort=updated&per_page=9`);
+                const respuesta = await fetch(`https://api.github.com/users/${USUARIO_GITHUB}/repos?sort=updated&per_page=9`, {
+                    signal: controller.signal,
+                });
                 if (!respuesta.ok) {
                     throw new Error('No se pudieron cargar los repositorios');
                 }
@@ -41,12 +48,15 @@ function Portafolio({ isDarkMode }) {
                 setProyectos(datos);
                 setCargando(false);
             } catch (err) {
-                setError(err.message);
+                if (err.name !== 'AbortError') {
+                    setError(err.message);
+                }
                 setCargando(false);
             }
         };
 
         obtenerProyectos();
+        return () => controller.abort();
     }, []);
 
     return (
@@ -80,10 +90,10 @@ function Portafolio({ isDarkMode }) {
                             indicators={true}
                             pause="hover"
                         >
-                            {Array.from({ length: Math.ceil(proyectos.length / 3) }).map((_, idx) => (
+                            {projectChunks.map((chunk, idx) => (
                                 <Carousel.Item key={idx} className="carousel-item-custom">
                                     <Row className="g-4 proyectos-row">
-                                        {proyectos.slice(idx * 3, idx * 3 + 3).map((proyecto) => {
+                                        {chunk.map((proyecto) => {
                                             const configLenguaje = obtenerConfigLenguaje(proyecto.language);
                                             return (
                                                 <Col key={proyecto.id} lg={4} md={6} className="proyecto-col">

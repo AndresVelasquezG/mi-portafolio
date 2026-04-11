@@ -4,7 +4,7 @@ import './servicios.css'
 
 function Servicios() {
   return (
-    <section className="services-section py-5 bg-light-custom" id="servicios">
+    <section className="services-section py-5 section-surface" id="servicios">
       <div className="container services-container">
         <h2 className="text-center display-5 fw-bold mb-5">Mis Servicios</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -23,7 +23,7 @@ function Servicios() {
                     <span className="badge bg-primary me-2">CSS3</span>
                     <span className="badge bg-primary me-2">JavaScript</span>
                     <span className="badge bg-primary">React</span>
-                    <span className="badge bg-primary">Responsive design</span>
+                    <span className="badge bg-primary">Responsive <br/> design</span>
                   </div>
                 </div>
               </div>
@@ -41,8 +41,8 @@ function Servicios() {
                   <h2 className="card-title h4 fw-bold">Metodología de desarrollo</h2>
                   <div className="skills">
                     <span className="badge bg-success me-2">Scrum</span>
-                    <span className="badge bg-success me-2">Comunicación efectiva</span>
-                    <span className="badge bg-success me-2">Trabajo en equipo</span>
+                    <span className="badge bg-success me-2">Comunicación <br/> efectiva</span>
+                    <span className="badge bg-success me-2">Trabajo <br/> en equipo</span>
                     <span className="badge bg-success">Ceremonias</span>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Home from './components/Home.jsx'
 import Header from './components/Header.jsx'
 import SobreMi from './components/SobreMi.jsx'
@@ -8,23 +8,21 @@ import Portafolio from './components/Portafolio.jsx'
 import Footer from './components/Footer.jsx'
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark'
+  })
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode')
-    } else {
-      document.body.classList.remove('dark-mode')
-    }
+    document.body.classList.toggle('dark-mode', isDarkMode)
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
   }, [isDarkMode])
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
+    setIsDarkMode((prevMode) => !prevMode)
   }
 
-  console.log('App is rendering')
   return (
-    <div className="container-fluid p-0">
+    <div className="app-wrapper container-fluid p-0">
       <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       <Home />
       <SobreMi />
