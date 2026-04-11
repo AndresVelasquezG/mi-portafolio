@@ -1,5 +1,5 @@
 import foto from '../assets/images/foto.png'
-import './sobreMi.css'
+import './sobremi.css'
 
 function SobreMi() {
   return (
