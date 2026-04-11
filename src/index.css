@@ -85,10 +85,14 @@ body {
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.site-footer h5 {
-  color: var(--text);
+.dark-mode .site-footer,
+.dark-mode .site-footer h5,
+.dark-mode .site-footer p,
+.dark-mode .site-footer .text-muted {
+  color: var(--white) !important;
 }
 
-.site-footer p {
-  margin-bottom: 0.35rem;
+.dark-mode .site-footer {
+  border-top-color: rgba(255, 255, 255, 0.15);
 }
+

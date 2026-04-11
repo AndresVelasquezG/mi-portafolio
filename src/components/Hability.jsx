@@ -1,9 +1,10 @@
 ﻿import './Hability.css';
 
 const skills = [
-    { label: 'HTML', value: 75 },
-    { label: 'CSS', value: 70 },
-    { label: 'JavaScript', value: 50 },
+    { label: 'HTML', value: 80 },
+    { label: 'CSS', value: 80 },
+    { label: 'JavaScript', value: 70 },
+    { label: 'React', value: 75 },
 ];
 
 function Hability() {
