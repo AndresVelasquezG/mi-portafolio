@@ -1,47 +1,68 @@
 import './home.css'
-import fondo from '../assets/images/fondo.png'
-
-
+import GalaxyBackground from '../components/GalaxyBackground'
 
 const Home = () => {
 
-    return (
+  return (
+    <section
+      className='home-container d-flex align-items-center justify-content-center'
+      id="home"
+      style={{
+        minHeight: '100vh',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
 
-        <div
-          className='home-container container-fluid d-flex align-items-center justify-content-center vh-100'
-          id="home"
-          style={{
-            backgroundImage: `linear-gradient(180deg, rgba(8, 55, 85, 0.72), rgba(6, 45, 70, 0.30)), url(${fondo})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-            <div className="row justify-content-center align-items-center h-100 w-100">
-                <div className="col-12 col-md-10 col-lg-8 text-center">
-                    <p className='welcome display-6 mb-3 animate__animated animate__fadeInDown'>Bienvenido</p>
-                    <h1 className="title display-4 fw-bold mb-4 animate__animated animate__fadeInUp">Soy Andrés Velásquez y este es Mi Portafolio.</h1>
-                    <h2 className='ability h4 mb-4 animate__animated animate__fadeIn'>Mis habilidades:</h2>
-                    <div className='skills-container hero-card p-4 rounded animate__animated animate__fadeInUp animate__delay-1s'>
-                        <p className='skillss lead'>Soy desarrollador Front End junior, con bases sólidas en la creación de interfaces modernas, limpias y funcionales. Me destaco por mi aprendizaje continuo, atención al detalle y compromiso con escribir código claro y mantenible. Disfruto transformar ideas en experiencias visuales intuitivas y seguir creciendo constantemente como profesional.</p>
-                        <div className="d-flex justify-content-center mt-4 w-100">
-                            <button className="btn btn-primary btn-lg rounded-pill animate__animated animate__bounceIn animate__delay-2s" onClick={() => document.getElementById('sobremi').scrollIntoView({ behavior: 'smooth' })}>
-                                Conoce Más
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      {/* 🌌 Fondo galaxia */}
+      <GalaxyBackground />
+      <GalaxyBackground
+        color="#6366f1"
+        size={0.2}
+        opacity={0.4}
+      />
+
+      {/* 👇 Contenido */}
+      <div
+        className="text-center px-3"
+        style={{
+          maxWidth: '800px',
+          position: 'relative',
+          zIndex: 1
+        }}
+      >
+
+        <h1 className="fw-bold mb-3" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+          Andrés Velásquez
+        </h1>
+
+        <h2 className="mb-3 text-primary" style={{ fontWeight: 500 }}>
+          Desarrollador Frontend especializado en React
+        </h2>
+
+        <p className="mb-4 text-light" style={{ fontSize: '1.1rem', opacity: 0.85 }}>
+          Construyo aplicaciones web modernas, rápidas y centradas en la experiencia del usuario.
+        </p>
+
+        <div className="d-flex justify-content-center gap-3 flex-wrap">
+          <button
+            className="btn btn-primary btn-lg px-4 rounded-pill"
+            onClick={() => document.getElementById('portafolio').scrollIntoView({ behavior: 'smooth' })}
+          >
+            Ver proyectos
+          </button>
+
+          <button
+            className="btn btn-outline-light btn-lg px-4 rounded-pill"
+            onClick={() => document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })}
+          >
+            Contactarme
+          </button>
         </div>
 
-    )
-
+      </div>
+    </section>
+  )
 }
 
-  
-
-
-
-
-
-export default Home;
+export default Home

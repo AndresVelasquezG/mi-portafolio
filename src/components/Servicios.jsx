@@ -2,75 +2,63 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faUsers, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 import './servicios.css'
 
+const services = [
+  {
+    icon: faCode,
+    title: 'Desarrollo Frontend',
+    description: 'Construcción de interfaces modernas, responsivas y optimizadas utilizando React y tecnologías actuales.',
+  },
+  {
+    icon: faUsers,
+    title: 'Trabajo en equipo',
+    description: 'Experiencia colaborando en entornos ágiles, participando en metodologías como Scrum y comunicación efectiva.',
+  },
+  {
+    icon: faLaptopCode,
+    title: 'Control de versiones',
+    description: 'Gestión de proyectos con Git y GitHub, asegurando control de cambios y trabajo colaborativo eficiente.',
+  },
+]
+
 function Servicios() {
   return (
-    <section className="services-section py-5 section-surface" id="servicios">
-      <div className="container services-container">
-        <h2 className="text-center display-5 fw-bold mb-5">Mis Servicios</h2>
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <section className="services-section" id="servicios">
 
-          {/* CARD 1 */}
-          <div className="col d-flex">
-            <div className="card h-100 w-100 border-0 shadow-lg hover-card">
-              <div className="card-body text-center">
-                <div className="react-icon mb-3">
-                  <FontAwesomeIcon icon={faCode} size="3x" className="text-primary" />
-                </div>
-                <div className="card-content">
-                  <h2 className="card-title h4 fw-bold">Desarrollo Frontend</h2>
-                  <div className="skills">
-                    <span className="badge bg-primary me-2">HTML5</span>
-                    <span className="badge bg-primary me-2">CSS3</span>
-                    <span className="badge bg-primary me-2">JavaScript</span>
-                    <span className="badge bg-primary">React</span>
-                    <span className="badge bg-primary">Responsive <br/> design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="container">
 
-          {/* CARD 2 */}
-          <div className="col d-flex">
-            <div className="card h-100 w-100 border-0 shadow-lg hover-card">
-              <div className="card-body text-center">
-                <div className="react-icon mb-3">
-                  <FontAwesomeIcon icon={faUsers} size="3x" className="text-success" />
-                </div>
-                <div className="card-content">
-                  <h2 className="card-title h4 fw-bold">Metodología de desarrollo</h2>
-                  <div className="skills">
-                    <span className="badge bg-success me-2">Scrum</span>
-                    <span className="badge bg-success me-2">Comunicación <br/> efectiva</span>
-                    <span className="badge bg-success me-2">Trabajo <br/> en equipo</span>
-                    <span className="badge bg-success">Ceremonias</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* TITULO */}
+        <div className="text-center mb-5">
+          <h2 className="services-title">Servicios</h2>
+          <p className="services-subtitle">
+            Cómo puedo aportar valor a tus proyectos
+          </p>
+        </div>
 
-          {/* CARD 3 */}
-          <div className="col d-flex">
-            <div className="card h-100 w-100 border-0 shadow-lg hover-card">
-              <div className="card-body text-center">
-                <div className="react-icon mb-3">
-                  <FontAwesomeIcon icon={faLaptopCode} size="3x" className="text-warning" />
-                </div>
-                <div className="card-content">
-                  <h2 className="card-title h4 fw-bold">Control de versiones y colaboracion</h2>
-                  <div className="skills">
-                    <span className="badge bg-warning text-dark me-2">Git</span>
-                    <span className="badge bg-warning text-dark me-2">GitHub</span>
-                    
-                  </div>
-                </div>
+        {/* GRID */}
+        <div className="services-grid">
+
+          {services.map((service, index) => (
+            <div key={index} className="service-card">
+
+              <div className="service-icon">
+                <FontAwesomeIcon icon={service.icon} />
               </div>
+
+              <h3 className="service-title">
+                {service.title}
+              </h3>
+
+              <p className="service-description">
+                {service.description}
+              </p>
+
             </div>
-          </div>
+          ))}
 
         </div>
+
       </div>
+
     </section>
   )
 }

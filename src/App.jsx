@@ -9,7 +9,9 @@ import Footer from './components/Footer.jsx'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark'
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme) return storedTheme === 'dark'
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
   })
 
   useEffect(() => {
@@ -17,9 +19,7 @@ function App() {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
   }, [isDarkMode])
 
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode)
-  }
+  const toggleTheme = () => setIsDarkMode((prevMode) => !prevMode)
 
   return (
     <div className="app-wrapper container-fluid p-0">

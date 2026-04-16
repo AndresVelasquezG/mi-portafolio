@@ -3,26 +3,69 @@ import './sobremi.css'
 
 function SobreMi() {
   return (
-    <section id="sobremi" className="sobremi-section py-5">
+    <section id="sobremi" className="about-section">
+
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col-12 col-md-6 mb-4 mb-md-0">
-            <img src={foto} alt="Imagen de Andrés Velásquez" loading="lazy" className="img-fluid rounded-circle shadow" />
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="card-sobremi border-0 shadow-sm">
-              <div className="card-body">
-                <h2 className="card-title display-5 fw-bold mb-3">Sobre Mí</h2>
-                <h3 className="h4 text-primary mb-4">Hola, soy Andrés Velásquez</h3>
-                <p className="lead">Soy un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales. Con habilidades en HTML, CSS, JavaScript y frameworks modernos, me esfuerzo por construir sitios web que no solo sean visualmente impresionantes, sino también intuitivos y accesibles para todos los usuarios.</p>
-                <a href="/HV-Andres.pdf" download className="btn btn-primary rounded-pill mt-3">Descargar CV</a>
-              </div>
+        <div className="row align-items-center justify-content-center">
+
+          {/* 👇 IMAGEN */}
+          <div className="col-12 col-md-5 text-center mb-5 mb-md-0">
+            <div className="about-image-wrapper">
+              <img
+                src={foto}
+                alt="Andrés Velásquez"
+                className="about-image"
+              />
             </div>
           </div>
+
+          {/* 👇 TEXTO */}
+          <div className="col-12 col-md-7">
+
+            <h2 className="about-title mb-3">
+              Sobre mí
+            </h2>
+
+            <h3 className="about-subtitle mb-4">
+              Desarrollador Frontend especializado en React
+            </h3>
+
+            <p className="about-text mb-3">
+              Soy desarrollador frontend enfocado en la creación de interfaces modernas, limpias y funcionales. Me especializo en construir aplicaciones utilizando React, priorizando la experiencia del usuario y el rendimiento.
+            </p>
+
+            <p className="about-text mb-4">
+              Actualmente estoy fortaleciendo mis habilidades en arquitectura frontend, consumo de APIs y manejo de estado, con el objetivo de desarrollar soluciones escalables y mantenibles.
+            </p>
+
+            {/* 👇 BOTONES */}
+            <div className="d-flex gap-3 flex-wrap">
+              <a
+                href="/HV-Andres.pdf"
+                download
+                className="btn btn-primary px-4 rounded-pill"
+              >
+                Descargar CV
+              </a>
+
+              <button
+                className="btn btn-outline-light px-4 rounded-pill"
+                onClick={() =>
+                  document.getElementById('contacto')
+                    .scrollIntoView({ behavior: 'smooth' })
+                }
+              >
+                Contactarme
+              </button>
+            </div>
+
+          </div>
+
         </div>
       </div>
+
     </section>
   )
 }
 
-export default SobreMi;
+export default SobreMi
