@@ -54,6 +54,7 @@ const Home = () => {
 
           <button
             className="btn btn-outline-light btn-lg px-4 rounded-pill"
+            style={{ color: 'white' }}
             onClick={() => document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })}
           >
             Contactarme

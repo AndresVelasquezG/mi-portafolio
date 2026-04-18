@@ -69,3 +69,13 @@ body.dark-mode .custom-navbar {
 body.dark-mode .btn-theme {
   background: rgba(255, 255, 255, 0.08);
 }
+
+.nav-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-btn:active {
+  outline: none;
+  box-shadow: none;
+}

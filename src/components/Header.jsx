@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import './header.css'
+import { color } from 'three/tsl'
 
 function Header({ toggleTheme, isDarkMode }) {
   const collapseRef = useRef(null)
@@ -52,9 +53,12 @@ function Header({ toggleTheme, isDarkMode }) {
         {/* LOGO + NOMBRE */}
         <button
           className="navbar-brand d-flex align-items-center fw-bold border-0 bg-transparent"
-          onClick={() => handleSelect('home')}
+          onClick={(event) => { handleSelect('home'); event.target.blur(); }}
+          style={{color: 'inherit'}}
         >
-          <img src={logo} width="40" className="me-2" alt="Logo" />
+          <img src={logo} width="40" className="me-2" alt="Logo" 
+          
+          />
           Andrés Velásquez
         </button>
 
@@ -85,7 +89,7 @@ function Header({ toggleTheme, isDarkMode }) {
               <li key={item.id} className="nav-item">
                 <button
                   className="nav-link nav-btn"
-                  onClick={() => handleSelect(item.id)}
+                  onClick={(event) => { handleSelect(item.id); event.target.blur(); }}
                 >
                   {item.label}
                 </button>
